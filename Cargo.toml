@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "amdsmi",
+    "amdsmi-sys",
+    "hip",
+    "hip-sys",
+    "hsa",
+    "hsa-sys",
+    "opencl",
+    "opencl-collections",
+    "opencl-collections-examples",
+    "opencl-examples",
+    "opencl-sys",
+    "opencl-node",
+    "utilities"
+]
+
+#[profile.dev]
+#debug-assertions = false

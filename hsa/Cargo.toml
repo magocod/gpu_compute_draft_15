@@ -1,0 +1,13 @@
+[package]
+name = "hsa"
+version = "0.1.3"
+edition = "2021"
+
+[dependencies]
+hsa-sys = { path = "../hsa-sys" }
+utilities = { path = "../utilities" }
+libc = "0.2"
+
+[features]
+default = ["rocm_6_2_2"]
+rocm_6_2_2 = ["hsa-sys/rocm_6_2_2"]

@@ -1,0 +1,12 @@
+[package]
+name = "amdsmi"
+version = "0.1.2"
+edition = "2021"
+
+[dependencies]
+amdsmi-sys = { path = "../amdsmi-sys" }
+utilities = { path = "../utilities" }
+
+[features]
+default = ["rocm_6_2_2"]
+rocm_6_2_2 = ["amdsmi-sys/rocm_6_2_2"]

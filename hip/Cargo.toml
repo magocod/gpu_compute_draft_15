@@ -1,0 +1,13 @@
+[package]
+name = "hip"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hip-sys = { path = "../hip-sys" }
+utilities = { path = "../utilities" }
+libc = "0.2"
+
+[features]
+default = ["rocm_6_2_2"]
+rocm_6_2_2 = ["hip-sys/rocm_6_2_2"]

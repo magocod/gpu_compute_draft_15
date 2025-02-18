@@ -1,0 +1,14 @@
+[package]
+name = "hip-sys"
+version = "0.1.2"
+edition = "2021"
+
+[dependencies]
+utilities = { path = "../utilities" }
+
+[build-dependencies]
+bindgen = "0.71.1"
+
+[features]
+default = ["rocm_6_2_2"]
+rocm_6_2_2 = []

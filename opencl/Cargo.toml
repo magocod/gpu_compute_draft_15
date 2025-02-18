@@ -1,0 +1,8 @@
+[package]
+name = "opencl"
+version = "0.1.4"
+edition = "2021"
+
+[dependencies]
+opencl-sys = { path = "../opencl-sys" }
+utilities = { path = "../utilities" }

@@ -1,0 +1,7 @@
+[package]
+name = "opencl-collections-examples"
+version = "0.1.4"
+edition = "2021"
+
+[dependencies]
+opencl-collections = { path = "../opencl-collections" }
