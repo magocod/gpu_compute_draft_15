@@ -38,11 +38,10 @@ impl HipModule {
 
         let k_source = CString::new(kernel_source).unwrap();
         let mut module: hipModule_t = std::ptr::null_mut();
-        
+
         let mut code_size = 0;
 
         unsafe {
-
             let rtc_ret_code = hiprtcCreateProgram(
                 &mut prog,            // HIPRTC program handle
                 k_source.as_ptr(),    // kernel source string
@@ -72,11 +71,12 @@ impl HipModule {
                     let rtc_ret_code = hiprtcGetProgramLog(prog, log_vec.as_mut_ptr());
                     hiprtc_check(rtc_ret_code)?;
 
-                    let text = buf_i8_to_string(&log_vec).expect("Failed to convert log vec to string");
+                    let text =
+                        buf_i8_to_string(&log_vec).expect("Failed to convert log vec to string");
                     panic!("Compilation failed with: {}", text);
                 }
             }
-            
+
             let rtc_ret_code = hiprtcGetCodeSize(prog, &mut code_size);
             hiprtc_check(rtc_ret_code)?;
 
