@@ -38,6 +38,8 @@ impl HipModule {
 
         let k_source = CString::new(kernel_source).unwrap();
         let mut module: hipModule_t = std::ptr::null_mut();
+        
+        let mut code_size = 0;
 
         unsafe {
 
@@ -74,8 +76,7 @@ impl HipModule {
                     panic!("Compilation failed with: {}", text);
                 }
             }
-
-            let mut code_size = 0;
+            
             let rtc_ret_code = hiprtcGetCodeSize(prog, &mut code_size);
             hiprtc_check(rtc_ret_code)?;
 
